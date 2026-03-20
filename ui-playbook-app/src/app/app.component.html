@@ -1,0 +1,89 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <span class="pi pi-book logo-icon"></span>
+      <span class="logo-text">UI Playbook</span>
+    </div>
+
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-home"></span> Dashboard
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-section-title">PrimeNG Components</div>
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/components/button" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-stop-circle"></span> Button
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/table" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-table"></span> Table
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/form" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-pencil"></span> Form
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/dialog" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-window-maximize"></span> Dialog
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/chart" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-chart-bar"></span> Chart
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/menu" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-bars"></span> Menu
+        </a>
+      </li>
+      <li>
+        <a routerLink="/components/messages" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-bell"></span> Messages
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-section-title">AG Grid</div>
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/ag-grid" routerLinkActive="active" class="nav-link">
+          <span class="pi pi-th-large"></span> AG Grid
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main area -->
+  <div class="main-area">
+    <!-- Header -->
+    <header class="app-header">
+      <span class="header-title">UI Playbook</span>
+      <div class="header-actions">
+        <label class="theme-label">Theme:</label>
+        <p-select
+          [options]="themes"
+          [(ngModel)]="selectedTheme"
+          optionLabel="label"
+          optionValue="value"
+          (onChange)="onThemeChange($event.value)"
+          styleClass="theme-select">
+        </p-select>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
