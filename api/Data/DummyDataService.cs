@@ -42,6 +42,13 @@ public static class DummyDataService
         "Pending", "Processing", "Shipped", "Delivered", "Cancelled", "Returned"
     ];
 
+    private static string ToEmailPart(string name) =>
+        name.ToLower()
+            .Replace("ü", "ue")
+            .Replace("ä", "ae")
+            .Replace("ö", "oe")
+            .Replace("ß", "ss");
+
     public static List<User> GetUsers()
     {
         var users = new List<User>();
@@ -51,7 +58,7 @@ public static class DummyDataService
         {
             var firstName = FirstNames[(i - 1) % FirstNames.Length];
             var lastName = LastNames[(i - 1) % LastNames.Length];
-            var email = $"{firstName.ToLower()}.{lastName.ToLower().Replace("ü", "ue").Replace("ä", "ae").Replace("ö", "oe")}@example.com";
+            var email = $"{ToEmailPart(firstName)}.{ToEmailPart(lastName)}@example.com";
 
             users.Add(new User(
                 Id: i,
