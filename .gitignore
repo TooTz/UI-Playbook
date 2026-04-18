@@ -1,0 +1,18 @@
+# .NET build artifacts
+api/bin/
+api/obj/
+
+# Angular build artifacts
+ui-playbook-app/dist/
+ui-playbook-app/.angular/
+
+# Node modules
+ui-playbook-app/node_modules/
+
+# Environment specific
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
